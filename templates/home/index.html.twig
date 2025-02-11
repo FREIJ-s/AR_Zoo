@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Arcadia Zoo{% endblock %}
+
+{% block body %}
+    <div class="video-container">
+        <iframe 
+            src="https://iframe.videodelivery.net/0b42fd1049385a9cf12e6a822b8df575?muted=true&preload=true&loop=true&autoplay=true&controls=false" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+        <div class="overlay">
+            <h1 class="display-4 text-white">Bienvenue à Arcadia Zoo 🦁</h1>
+            <p class="lead text-white">Découvrez nos animaux et leurs habitats fascinants.</p>
+            <a href="#" class="btn btn-primary btn-lg">Explorer</a>
+        </div>
+    </div>
+
+    <section class="mt-5">
+        <h2 class="text-center">Nos animaux en vedette</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/images/barbarie.jpg" class="card-img-top" alt="Lion">
+                    <div class="card-body">
+                        <h5 class="card-title">Simba</h5>
+                        <p class="card-text">Le roi de la savane africaine.</p>
+                        <a href="#" class="btn btn-outline-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/images/elephant.jpg" class="card-img-top" alt="Éléphant">
+                    <div class="card-body">
+                        <h5 class="card-title">Dumbo</h5>
+                        <p class="card-text">Un géant doux et puissant.</p>
+                        <a href="#" class="btn btn-outline-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/images/guepard.jpg" class="card-img-top" alt="Guépard">
+                    <div class="card-body">
+                        <h5 class="card-title">Flash</h5>
+                        <p class="card-text">L'animal terrestre le plus rapide.</p>
+                        <a href="#" class="btn btn-outline-primary">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

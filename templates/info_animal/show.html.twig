@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InfoAnimal{% endblock %}
+
+{% block body %}
+    <h1>InfoAnimal</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ info_animal.id }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ info_animal.status }}</td>
+            </tr>
+            <tr>
+                <th>Food</th>
+                <td>{{ info_animal.food }}</td>
+            </tr>
+            <tr>
+                <th>Weight</th>
+                <td>{{ info_animal.weight }}</td>
+            </tr>
+            <tr>
+                <th>DatePassage</th>
+                <td>{{ info_animal.datePassage ? info_animal.datePassage|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_info_animal_index') }}">back to list</a>
+
+    <a href="{{ path('app_info_animal_edit', {'id': info_animal.id}) }}">edit</a>
+
+    {{ include('info_animal/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ImageAnimal{% endblock %}
+
+{% block body %}
+    <h1>ImageAnimal</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ image_animal.id }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ image_animal.label }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ image_animal.url }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_image_animal_index') }}">back to list</a>
+
+    <a href="{{ path('app_image_animal_edit', {'id': image_animal.id}) }}">edit</a>
+
+    {{ include('image_animal/_delete_form.html.twig') }}
+{% endblock %}

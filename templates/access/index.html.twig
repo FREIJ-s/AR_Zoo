@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Access index{% endblock %}
+
+{% block body %}
+    <h1>Access index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>AccessType</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for access in accesses %}
+            <tr>
+                <td>{{ access.accessType }}</td>
+                <td>
+                    <a href="{{ path('app_access_show', {'employee': access.employee}) }}">show</a>
+                    <a href="{{ path('app_access_edit', {'employee': access.employee}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_access_new') }}">Create new</a>
+{% endblock %}

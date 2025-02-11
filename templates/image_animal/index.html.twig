@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ImageAnimal index{% endblock %}
+
+{% block body %}
+    <h1>ImageAnimal index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Label</th>
+                <th>Url</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for image_animal in image_animals %}
+            <tr>
+                <td>{{ image_animal.id }}</td>
+                <td>{{ image_animal.label }}</td>
+                <td>{{ image_animal.url }}</td>
+                <td>
+                    <a href="{{ path('app_image_animal_show', {'id': image_animal.id}) }}">show</a>
+                    <a href="{{ path('app_image_animal_edit', {'id': image_animal.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_image_animal_new') }}">Create new</a>
+{% endblock %}

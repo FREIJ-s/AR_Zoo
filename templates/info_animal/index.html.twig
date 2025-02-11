@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}InfoAnimal index{% endblock %}
+
+{% block body %}
+    <h1>InfoAnimal index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Status</th>
+                <th>Food</th>
+                <th>Weight</th>
+                <th>DatePassage</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info_animal in info_animals %}
+            <tr>
+                <td>{{ info_animal.id }}</td>
+                <td>{{ info_animal.status }}</td>
+                <td>{{ info_animal.food }}</td>
+                <td>{{ info_animal.weight }}</td>
+                <td>{{ info_animal.datePassage ? info_animal.datePassage|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_info_animal_show', {'id': info_animal.id}) }}">show</a>
+                    <a href="{{ path('app_info_animal_edit', {'id': info_animal.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_info_animal_new') }}">Create new</a>
+{% endblock %}

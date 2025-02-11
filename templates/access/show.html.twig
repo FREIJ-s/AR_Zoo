@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Access{% endblock %}
+
+{% block body %}
+    <h1>Access</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>AccessType</th>
+                <td>{{ access.accessType }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_access_index') }}">back to list</a>
+
+    <a href="{{ path('app_access_edit', {'employee': access.employee}) }}">edit</a>
+
+    {{ include('access/_delete_form.html.twig') }}
+{% endblock %}
