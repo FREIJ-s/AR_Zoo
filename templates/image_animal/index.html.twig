@@ -1,37 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ImageAnimal index{% endblock %}
+{% block title %}Liste des Images des Animaux{% endblock %}
 
 {% block body %}
-    <h1>ImageAnimal index</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-primary">Galerie des Animaux 🦓🐅🐘</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Label</th>
-                <th>Url</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="row">
         {% for image_animal in image_animals %}
-            <tr>
-                <td>{{ image_animal.id }}</td>
-                <td>{{ image_animal.label }}</td>
-                <td>{{ image_animal.url }}</td>
-                <td>
-                    <a href="{{ path('app_image_animal_show', {'id': image_animal.id}) }}">show</a>
-                    <a href="{{ path('app_image_animal_edit', {'id': image_animal.id}) }}">edit</a>
-                </td>
-            </tr>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg">
+                    <img src="{{ image_animal.url }}" class="card-img-top" alt="{{ image_animal.label }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ image_animal.label }}</h5>
+                        <a href="{{ path('app_image_animal_show', {'id': image_animal.id}) }}" class="btn btn-info btn-sm">Voir</a>
+                        <a href="{{ path('app_image_animal_edit', {'id': image_animal.id}) }}" class="btn btn-warning btn-sm">Modifier</a>
+                    </div>
+                </div>
+            </div>
         {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
+            <p class="text-center">Aucune image trouvée.</p>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 
-    <a href="{{ path('app_image_animal_new') }}">Create new</a>
+    <a href="{{ path('app_image_animal_new') }}" class="btn btn-success">Ajouter une nouvelle image</a>
+</div>
 {% endblock %}

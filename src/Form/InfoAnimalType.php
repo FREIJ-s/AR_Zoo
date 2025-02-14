@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Animal;
-use App\Entity\Employee;
+use App\Entity\User;
 use App\Entity\InfoAnimal;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -22,7 +22,7 @@ class InfoAnimalType extends AbstractType
                 'widget' => 'single_text',
             ])
             ->add('veterinary', EntityType::class, [
-                'class' => Employee::class,
+                'class' => User::class,
                 'choice_label' => 'id',
             ])
             ->add('animal', EntityType::class, [

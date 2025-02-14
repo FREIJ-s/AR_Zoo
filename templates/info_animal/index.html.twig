@@ -1,19 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}InfoAnimal index{% endblock %}
+{% block title %}Liste des Soins des Animaux{% endblock %}
 
 {% block body %}
-    <h1>InfoAnimal index</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-primary">Suivi des Animaux 🦓🐅🐘</h1>
 
-    <table class="table">
-        <thead>
+    <table class="table table-striped table-hover mt-4">
+        <thead class="table-dark">
             <tr>
-                <th>Id</th>
-                <th>Status</th>
-                <th>Food</th>
-                <th>Weight</th>
-                <th>DatePassage</th>
-                <th>actions</th>
+                <th>ID</th>
+                <th>État</th>
+                <th>Nourriture</th>
+                <th>Poids</th>
+                <th>Date de passage</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -22,20 +23,21 @@
                 <td>{{ info_animal.id }}</td>
                 <td>{{ info_animal.status }}</td>
                 <td>{{ info_animal.food }}</td>
-                <td>{{ info_animal.weight }}</td>
-                <td>{{ info_animal.datePassage ? info_animal.datePassage|date('Y-m-d') : '' }}</td>
+                <td>{{ info_animal.weight }} kg</td>
+                <td>{{ info_animal.datePassage ? info_animal.datePassage|date('Y-m-d') : 'Non spécifiée' }}</td>
                 <td>
-                    <a href="{{ path('app_info_animal_show', {'id': info_animal.id}) }}">show</a>
-                    <a href="{{ path('app_info_animal_edit', {'id': info_animal.id}) }}">edit</a>
+                    <a href="{{ path('app_info_animal_show', {'id': info_animal.id}) }}" class="btn btn-info btn-sm">Voir</a>
+                    <a href="{{ path('app_info_animal_edit', {'id': info_animal.id}) }}" class="btn btn-warning btn-sm">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6" class="text-center">Aucun enregistrement trouvé.</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_info_animal_new') }}">Create new</a>
+    <a href="{{ path('app_info_animal_new') }}" class="btn btn-success">Ajouter un enregistrement</a>
+</div>
 {% endblock %}

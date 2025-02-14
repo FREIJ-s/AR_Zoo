@@ -27,8 +27,6 @@ class Habitat
     #[ORM\OneToMany(mappedBy: "habitat", targetEntity: Animal::class, cascade: ["remove"])]
     private Collection $animals;
 
-    #[ORM\OneToMany(mappedBy: "habitat", targetEntity: Access::class, cascade: ["remove"])]
-    private Collection $accesses;
 
     #[ORM\OneToMany(mappedBy: "habitat", targetEntity: ImageHabitat::class, cascade: ["remove"])]
     private Collection $images;
@@ -36,7 +34,6 @@ class Habitat
     public function __construct()
     {
         $this->animals = new ArrayCollection();
-        $this->accesses = new ArrayCollection();
         $this->images = new ArrayCollection();
         $this->creationDate = new \DateTime();
     }
@@ -98,30 +95,6 @@ class Habitat
         if ($this->animals->removeElement($animal)) {
             if ($animal->getHabitat() === $this) {
                 $animal->setHabitat(null);
-            }
-        }
-        return $this;
-    }
-
-    public function getAccesses(): Collection
-    {
-        return $this->accesses;
-    }
-
-    public function addAccess(Access $access): self
-    {
-        if (!$this->accesses->contains($access)) {
-            $this->accesses->add($access);
-            $access->setHabitat($this);
-        }
-        return $this;
-    }
-
-    public function removeAccess(Access $access): self
-    {
-        if ($this->accesses->removeElement($access)) {
-            if ($access->getHabitat() === $this) {
-                $access->setHabitat(null);
             }
         }
         return $this;

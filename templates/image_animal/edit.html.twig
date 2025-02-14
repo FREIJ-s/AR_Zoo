@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit ImageAnimal{% endblock %}
+{% block title %}Modifier une Image{% endblock %}
 
 {% block body %}
-    <h1>Edit ImageAnimal</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-primary">Modifier une Image 🦁📷</h1>
 
-    {{ include('image_animal/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="card p-4 shadow-lg">
+        {{ include('image_animal/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    </div>
 
-    <a href="{{ path('app_image_animal_index') }}">back to list</a>
-
-    {{ include('image_animal/_delete_form.html.twig') }}
+    <div class="d-flex justify-content-between mt-3">
+        <a href="{{ path('app_image_animal_index') }}" class="btn btn-outline-secondary">Retour à la liste</a>
+        {{ include('image_animal/_delete_form.html.twig') }}
+    </div>
+</div>
 {% endblock %}

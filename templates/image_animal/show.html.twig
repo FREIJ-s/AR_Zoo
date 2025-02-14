@@ -1,30 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ImageAnimal{% endblock %}
+{% block title %}Détails de l'Image d'Animal{% endblock %}
 
 {% block body %}
-    <h1>ImageAnimal</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-info">Détails de l'Image 🐅</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ image_animal.id }}</td>
-            </tr>
-            <tr>
-                <th>Label</th>
-                <td>{{ image_animal.label }}</td>
-            </tr>
-            <tr>
-                <th>Url</th>
-                <td>{{ image_animal.url }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="card p-4 shadow-lg">
+        <img src="{{ image_animal.url }}" class="img-fluid rounded mb-3" alt="{{ image_animal.label }}">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">ID</th>
+                    <td>{{ image_animal.id }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Nom</th>
+                    <td>{{ image_animal.label }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">URL</th>
+                    <td>{{ image_animal.url }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <a href="{{ path('app_image_animal_index') }}">back to list</a>
-
-    <a href="{{ path('app_image_animal_edit', {'id': image_animal.id}) }}">edit</a>
-
-    {{ include('image_animal/_delete_form.html.twig') }}
+    <div class="d-flex justify-content-between mt-3">
+        <a href="{{ path('app_image_animal_index') }}" class="btn btn-outline-secondary">Retour à la liste</a>
+        <a href="{{ path('app_image_animal_edit', {'id': image_animal.id}) }}" class="btn btn-warning">Modifier</a>
+        {{ include('image_animal/_delete_form.html.twig') }}
+    </div>
+</div>
 {% endblock %}

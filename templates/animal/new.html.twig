@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Animal{% endblock %}
+{% block title %}Ajouter un Animal{% endblock %}
 
 {% block body %}
-    <h1>Create new Animal</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-success">Ajouter un Nouvel Animal 🦓</h1>
 
-    {{ include('animal/_form.html.twig') }}
+    <div class="card p-4 shadow">
+        {{ include('animal/_form.html.twig', {'button_label': 'Ajouter'}) }}
+    </div>
 
-    <a href="{{ path('app_animal_index') }}">back to list</a>
+    <div class="mt-3">
+        <a href="{{ path('app_animal_index') }}" class="btn btn-outline-secondary">Retour à la liste</a>
+    </div>
+</div>
 {% endblock %}

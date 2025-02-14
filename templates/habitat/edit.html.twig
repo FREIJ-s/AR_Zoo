@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Habitat{% endblock %}
+{% block title %}Modifier un Habitat{% endblock %}
 
 {% block body %}
-    <h1>Edit Habitat</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-primary">Modifier un Habitat 🌿</h1>
 
-    {{ include('habitat/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="card p-4 shadow-lg">
+        {{ include('habitat/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    </div>
 
-    <a href="{{ path('app_habitat_index') }}">back to list</a>
-
-    {{ include('habitat/_delete_form.html.twig') }}
+    <div class="d-flex justify-content-between mt-3">
+        <a href="{{ path('app_habitat_index') }}" class="btn btn-outline-secondary">Retour à la liste</a>
+        {{ include('habitat/_delete_form.html.twig') }}
+    </div>
+</div>
 {% endblock %}

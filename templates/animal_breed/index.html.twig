@@ -1,33 +1,37 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}AnimalBreed index{% endblock %}
+{% block title %}Liste des Races d'Animaux{% endblock %}
 
 {% block body %}
-    <h1>AnimalBreed index</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-primary">Races d'Animaux 🦓🐅🐘</h1>
 
-    <table class="table">
-        <thead>
+    <table class="table table-striped table-hover mt-4">
+        <thead class="table-dark">
             <tr>
                 <th>Id</th>
-                <th>actions</th>
+                <th>Race</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for animal_breed in animal_breeds %}
             <tr>
                 <td>{{ animal_breed.id }}</td>
+                <td>{{ animal_breed.breed }}</td>
                 <td>
-                    <a href="{{ path('app_animal_breed_show', {'id': animal_breed.id}) }}">show</a>
-                    <a href="{{ path('app_animal_breed_edit', {'id': animal_breed.id}) }}">edit</a>
+                    <a href="{{ path('app_animal_breed_show', {'id': animal_breed.id}) }}" class="btn btn-info btn-sm">Voir</a>
+                    <a href="{{ path('app_animal_breed_edit', {'id': animal_breed.id}) }}" class="btn btn-warning btn-sm">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="2">no records found</td>
+                <td colspan="3" class="text-center">Aucune race trouvée.</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_animal_breed_new') }}">Create new</a>
+    <a href="{{ path('app_animal_breed_new') }}" class="btn btn-success">Ajouter une nouvelle race</a>
+</div>
 {% endblock %}

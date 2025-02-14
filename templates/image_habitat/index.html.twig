@@ -1,37 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ImageHabitat index{% endblock %}
+{% block title %}Liste des Images des Habitats{% endblock %}
 
 {% block body %}
-    <h1>ImageHabitat index</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-primary">Galerie des Habitats 🖼️</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Label</th>
-                <th>Url</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="row">
         {% for image_habitat in image_habitats %}
-            <tr>
-                <td>{{ image_habitat.id }}</td>
-                <td>{{ image_habitat.label }}</td>
-                <td>{{ image_habitat.url }}</td>
-                <td>
-                    <a href="{{ path('app_image_habitat_show', {'id': image_habitat.id}) }}">show</a>
-                    <a href="{{ path('app_image_habitat_edit', {'id': image_habitat.id}) }}">edit</a>
-                </td>
-            </tr>
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg">
+                    <img src="{{ image_habitat.url }}" class="card-img-top" alt="{{ image_habitat.label }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ image_habitat.label }}</h5>
+                        <a href="{{ path('app_image_habitat_show', {'id': image_habitat.id}) }}" class="btn btn-info btn-sm">Voir</a>
+                        <a href="{{ path('app_image_habitat_edit', {'id': image_habitat.id}) }}" class="btn btn-warning btn-sm">Modifier</a>
+                    </div>
+                </div>
+            </div>
         {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
+            <p class="text-center">Aucune image trouvée.</p>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 
-    <a href="{{ path('app_image_habitat_new') }}">Create new</a>
+    <a href="{{ path('app_image_habitat_new') }}" class="btn btn-success">Ajouter une nouvelle image</a>
+</div>
 {% endblock %}

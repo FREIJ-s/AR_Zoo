@@ -1,4 +1,23 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="mb-3">
+        {{ form_label(form.status, 'État de l\'animal', { 'class': 'form-label' }) }}
+        {{ form_widget(form.status, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.food, 'Nourriture', { 'class': 'form-label' }) }}
+        {{ form_widget(form.food, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.weight, 'Poids (kg)', { 'class': 'form-label' }) }}
+        {{ form_widget(form.weight, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.datePassage, 'Date de passage', { 'class': 'form-label' }) }}
+        {{ form_widget(form.datePassage, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">{{ button_label|default('Sauvegarder') }}</button>
 {{ form_end(form) }}

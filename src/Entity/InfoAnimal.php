@@ -25,9 +25,9 @@ class InfoAnimal
     #[ORM\Column(type: "date")]
     private \DateTime $datePassage;
 
-    #[ORM\ManyToOne(targetEntity: Employee::class, inversedBy: "infoAnimals")]
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: "infoAnimals")]
     #[ORM\JoinColumn(nullable: false, onDelete: "CASCADE")]
-    private ?Employee $veterinary = null;
+    private ?User $veterinary = null;
 
     #[ORM\OneToOne(targetEntity: Animal::class, inversedBy: "infoAnimal")]
     #[ORM\JoinColumn(nullable: false, onDelete: "CASCADE")]
@@ -82,12 +82,12 @@ class InfoAnimal
         return $this;
     }
 
-    public function getVeterinary(): ?Employee
+    public function getVeterinary(): ?User
     {
         return $this->veterinary;
     }
 
-    public function setVeterinary(?Employee $veterinary): self
+    public function setVeterinary(?User $veterinary): self
     {
         $this->veterinary = $veterinary;
         return $this;

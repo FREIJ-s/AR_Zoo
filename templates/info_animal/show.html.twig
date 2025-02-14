@@ -1,38 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}InfoAnimal{% endblock %}
+{% block title %}Détails du Suivi de l'Animal{% endblock %}
 
 {% block body %}
-    <h1>InfoAnimal</h1>
+<div class="container mt-4">
+    <h1 class="text-center text-info">Détails du Suivi 🦒</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ info_animal.id }}</td>
-            </tr>
-            <tr>
-                <th>Status</th>
-                <td>{{ info_animal.status }}</td>
-            </tr>
-            <tr>
-                <th>Food</th>
-                <td>{{ info_animal.food }}</td>
-            </tr>
-            <tr>
-                <th>Weight</th>
-                <td>{{ info_animal.weight }}</td>
-            </tr>
-            <tr>
-                <th>DatePassage</th>
-                <td>{{ info_animal.datePassage ? info_animal.datePassage|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="card p-4 shadow-lg">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row">ID</th>
+                    <td>{{ info_animal.id }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">État</th>
+                    <td>{{ info_animal.status }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Nourriture</th>
+                    <td>{{ info_animal.food }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Poids</th>
+                    <td>{{ info_animal.weight }} kg</td>
+                </tr>
+                <tr>
+                    <th scope="row">Date de passage</th>
+                    <td>{{ info_animal.datePassage ? info_animal.datePassage|date('Y-m-d') : 'Non spécifiée' }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <a href="{{ path('app_info_animal_index') }}">back to list</a>
-
-    <a href="{{ path('app_info_animal_edit', {'id': info_animal.id}) }}">edit</a>
-
-    {{ include('info_animal/_delete_form.html.twig') }}
+    <div class="d-flex justify-content-between mt-3">
+        <a href="{{ path('app_info_animal_index') }}" class="btn btn-outline-secondary">Retour à la liste</a>
+        <a href="{{ path('app_info_animal_edit', {'id': info_animal.id}) }}" class="btn btn-warning">Modifier</a>
+        {{ include('info_animal/_delete_form.html.twig') }}
+    </div>
+</div>
 {% endblock %}
