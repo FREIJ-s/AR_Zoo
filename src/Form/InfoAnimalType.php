@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 class InfoAnimalType extends AbstractType
 {
@@ -17,7 +18,7 @@ class InfoAnimalType extends AbstractType
         $builder
             ->add('status')
             ->add('food')
-            ->add('weight')
+            ->add('weight', NumberType::class)
             ->add('datePassage', null, [
                 'widget' => 'single_text',
             ])
