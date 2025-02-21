@@ -10,118 +10,105 @@
     <div class="overlay">
         <h1 class="display-4 fw-bold">Bienvenue à Arcadia Zoo 🦁</h1>
         <p class="lead">Découvrez nos animaux et leurs habitats fascinants.</p>
-        <a href="#" class="btn btn-warning btn-lg">Explorer</a>
+        <a href="{{ path('app_image_habitat_index')}}" class="btn btn-warning btn-lg">Explorer</a>
     </div>
 </div>
 
-<!-- 🦓 Section Nos Animaux Vedette -->
-<section class="container mt-5">
-        <h2 class="text-center mb-4">Nos animaux en vedette</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card shadow">
-                    <img src="assets/images/barbarie.jpg" class="card-img-top" alt="Lion">
-                    <div class="card-body">
-                        <h5 class="card-title">Simba</h5>
-                        <p class="card-text">Le roi de la savane africaine.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow">
-                    <img src="assets/images/elephant.jpg" class="card-img-top" alt="Éléphant">
-                    <div class="card-body">
-                        <h5 class="card-title">Dumbo</h5>
-                        <p class="card-text">Un géant doux et puissant.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow">
-                    <img src="assets/images/guepard.jpg" class="card-img-top" alt="Guépard">
-                    <div class="card-body">
-                        <h5 class="card-title">Flash</h5>
-                        <p class="card-text">L'animal terrestre le plus rapide.</p>
-                        <a href="#" class="btn btn-success">En savoir plus</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section class="container mt-5">
-    <h2 class="text-center mb-4">Réservez votre visite</h2>
-    <form class="p-4 shadow-lg rounded bg-white">
-        <div class="mb-3">
-            <label for="date" class="form-label">Date de visite</label>
-            <input type="date" class="form-control" id="date">et courige un petit le code laisse la parie javascriptr sera fonctionnele 
-        </div>
-        <div class="mb-3">
-            <label for="time" class="form-label">Heure</label>
-            <input type="time" class="form-control" id="time">
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Réserver</button>
-    </form>
+<!-- Présentation du Zoo -->
+<section id="A-propos" class="container mt-5 section-hidden">
+    <h2 class="text-center mb-4">À propos d'Arcadia Zoo</h2>
+    <p class="text-center">Arcadia Zoo est un lieu magique où petits et grands peuvent découvrir des animaux fascinants, 
+    apprendre à mieux comprendre la faune et participer à des expériences inoubliables. 
+    Avec nos habitats naturels recréés, nos spectacles éducatifs et nos nombreuses activités interactives, 
+    nous offrons un cadre idéal pour explorer le règne animal.</p>
 </section>
 
-<section class="container mt-5">
-    <h2 class="text-center mb-4">Vous avez trouvé un animal sauvage ?</h2>
-    <form class="p-4 shadow-lg rounded bg-white">
-        <div class="mb-3">
-            <label for="location" class="form-label">Lieu</label>
-            <input type="text" class="form-control" id="location" placeholder="Ex: Rue des Lions, Paris">
+<!-- Nos Animaux Vedette -->
+<section class="container mt-5 section-hidden">
+    <h2 class="text-center mb-4">Nos animaux en vedette</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card shadow">
+                        <img src="assets/images/barbarie.jpg" class="card-img-top" alt="Lion">
+                        <div class="card-body">
+                            <h5 class="card-title">Simba</h5>
+                            <p class="card-text"> Il rugit si fort que même les nuages tremblent !  
+                    Mais chut… il adore aussi les câlins.  
+                    Son plat préféré ? Un bon gros steak (mais pas en plastique) !.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="card shadow">
+                        <img src="assets/images/elephant.jpg" class="card-img-top" alt="Éléphant">
+                        <div class="card-body">
+                            <h5 class="card-title">Dumbo</h5>
+                            <p class="card-text"> Avec ses grandes oreilles, il entend même les secrets des fourmis !  
+                    Il adore prendre des bains de boue pour rester tout propre (bizarre, hein ?)  
+                    Son jeu préféré ? Faire la course… au ralenti !</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn btn-danger w-100">Signaler</button>
-    </form>
-</section>
 
-<section class="container mt-5">
-    <h2 class="text-center mb-4">Avis des visiteurs</h2>
-    <div id="comment-section" class="p-4 shadow-lg bg-white rounded">
-        <div class="mb-3">
-            <label for="comment" class="form-label">Laissez un commentaire</label>
-            <textarea class="form-control" id="comment" rows="2"></textarea>
+        <div class="col-md-6">
+            <div class="card shadow h-100">
+                <img src="assets/images/guepard.jpg" class="card-img-top" alt="Guépard">
+                <div class="card-body">
+                    <h5 class="card-title">Flash</h5>
+                    <p class="card-text"> Il court plus vite qu’un super-héros en patins à roulettes !  
+                    Mais attention… il adore faire la sieste après.  
+                    Sa technique secrète ? Des pauses turbo-chocolat (ou presque) !</p>
+                </div>
+            </div>
         </div>
-        <button class="btn btn-success w-100">Poster</button>
     </div>
 </section>
 
+<!-- Événements au Zoo -->
+<section id="Evenements" class="container mt-5 section-hidden">
+    <h2 class="text-center mb-4">Événements à ne pas manquer</h2>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Nuit au Zoo 🌙</h5>
+                    <p class="card-text">Venez découvrir le zoo sous un autre angle avec nos visites nocturnes et rencontrez les animaux qui s’éveillent après le coucher du soleil !</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Spectacle des Rapaces 🦅</h5>
+                    <p class="card-text">Assistez à un impressionnant spectacle de rapaces en vol libre et apprenez-en plus sur ces majestueux chasseurs du ciel.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Journée des Enfants 🧒</h5>
+                    <p class="card-text">Un événement spécial pour les plus jeunes, avec des ateliers interactifs, des jeux éducatifs et des rencontres avec nos soigneurs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Footer -->
 <footer class="bg-dark text-light text-center py-4 mt-5">
     <div class="container">
         <p>© 2024 Arcadia Zoo | <a href="#" class="text-light">Mentions Légales</a></p>
         <div class="d-flex justify-content-center">
-            <a href="https://www.facebook.com" class="me-3"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com" class="me-3"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com" class="me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="me-3 text-light"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="me-3 text-light"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="me-3 text-light"><i class="fa-brands fa-twitter"></i></a>
         </div>
     </div>
 </footer>
 
-<script>
-    // Effet d'affichage progressif sur les sections
-    document.addEventListener("DOMContentLoaded", function() {
-        let sections = document.querySelectorAll("section");
-        sections.forEach(section => {
-            section.style.opacity = "0";
-            section.style.transform = "translateY(50px)";
-        });
-
-        window.addEventListener("scroll", function() {
-            sections.forEach(section => {
-                let position = section.getBoundingClientRect().top;
-                if (position < window.innerHeight - 50) {
-                    section.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
-                    section.style.opacity = "1";
-                    section.style.transform = "translateY(0)";
-                }
-            });
-        });
-    });
-</script>
 {% endblock %}

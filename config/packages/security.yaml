@@ -91,14 +91,17 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/admin, roles: ROLE_USER }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/info/animal, roles: ROLE_USER }
+        - { path: ^/animal/breed, roles: ROLE_USER }
+        - { path: ^/animal, roles: ROLE_USER }
+        - { path: ^/habitat, roles: ROLE_USER }
+        - { path: ^/register, roles: ROLE_USER }
 
 
     role_hierarchy:
         ROLE_VETERINARY: [ROLE_USER]
         ROLE_KEEPER: [ROLE_USER]
-        ROLE_ADMIN: [ROLE_USER, ROLE_VETERINARY, ROLE_KEEPER]
+        ROLE_ADMIN: [ROLE_USER, EROLE_VETRINARY, ROLE_KEEPER]
 
 
 
