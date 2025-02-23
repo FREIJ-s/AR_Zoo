@@ -125,8 +125,22 @@
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{{ path('app_ajouter_avis') }}">Ajouter un Avis</a></li>
                         </ul>
-
                     </li>
+                        {% if is_granted('ROLE_USER' )%}
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Veterinaires/Employes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ path('app_animal_index') }}">Animal</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{{ path('app_animal_breed_index') }}">Race Animal</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{{ path('app_info_animal_index') }}">Information Animal</a></li>
+                        </ul>
+                    </li>
+                        {% endif %}
+
 
                 </ul>
                 {% if is_granted('ROLE_ADMIN' )%}
