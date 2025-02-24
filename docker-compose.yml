@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+    container_name: ar_zoo_php
+    volumes:
+      - ./app/assets:/var/www/html/assets
+      - ./app/bin:/var/www/html/bin
+      - ./app/config:/var/www/html/config
+      - ./app/migrations:/var/www/html/migrations
+      - ./app/public:/var/www/html/public
+      - ./app/src:/var/www/html/src
+      - ./app/templates:/var/www/html/templates
+      - ./app/translations:/var/www/html/translations
+      - ./app/tests:/var/www/html/tests
+      - ./app/.env:/var/www/html/.env
+      - ./app/composer.json:/var/www/html/composer.json
+      - ./app/composer.lock:/var/www/html/composer.lock
+    depends_on:
+      - mysql
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=dev
+      - APP_DEBUG=1
+      - DATABASE_URL=mysql://root:root@mysql:3306/db_zoo
+
+  mysql:
+    image: mysql:8.0
+    container_name: ar_zoo_mysql
+    volumes:
+      - ./.docker/mysql/data:/var/lib/mysql
+      - ./.docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_zoo
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: ar_zoo_phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
