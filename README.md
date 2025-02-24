@@ -2,12 +2,12 @@
 
 Application web de gestion de zoo développée avec Symfony 6 et Docker. Cette application permet de gérer les animaux, leurs habitats et les informations vétérinaires.
 
-## 📋 Prérequis
+##  Prérequis
 
 - Docker Desktop
 - Git
 
-## 📦 Fichiers à partager
+##  Fichiers à partager
 
 Pour partager le projet, incluez les éléments suivants :
 ```
@@ -35,7 +35,7 @@ Fichiers à exclure :
 - .docker/mysql/data/  # Données de la base
 ```
 
-## 🚀 Installation
+##  Installation
 
 1. Clonez le repository :
 ```bash
@@ -48,32 +48,30 @@ cd AR_Zoo-master
 docker-compose build
 ```
 
-3. Installez les dépendances Composer :
-```bash
-docker-compose run --rm php composer install
-```
 
-4. Lancez l'application :
+
+3. Lancez l'application :
 ```bash
 docker-compose up -d
 ```
 
-5. Configurez les permissions :
+4. Configurez les permissions :
 ```bash
 docker-compose exec php chmod -R 777 var/
 docker-compose exec php chmod -R 777 public/assets
 ```
 
-⚠️ Note importante : La base de données est automatiquement initialisée avec les tables et les données de test via le fichier `.docker/mysql/init.sql`. Il n'est pas nécessaire d'exécuter les migrations Doctrine.
 
-## 🌐 Accès
+ Note importante : La base de données est automatiquement initialisée avec les tables et les données de test via le fichier `.docker/mysql/init.sql`. Il n'est pas nécessaire d'exécuter les migrations Doctrine.
+
+## Accès
 
 - Application : [http://localhost:8000](http://localhost:8000)
 - PhpMyAdmin : [http://localhost:8080](http://localhost:8080)
   - Utilisateur : root
   - Mot de passe : root
 
-## 🛠️ Commandes utiles
+##  Commandes utiles
 
 ```bash
 # Arrêter l'application
@@ -89,7 +87,7 @@ docker-compose exec php bash
 docker-compose exec php php bin/console cache:clear
 ```
 
-## 🔧 Structure du projet
+##  Structure du projet
 
 ```
 AR_Zoo-master/
@@ -104,7 +102,7 @@ AR_Zoo-master/
 └── docker-compose.yml    # Configuration Docker
 ```
 
-## 🐛 Résolution des problèmes
+##  Résolution des problèmes
 
 1. **Erreur de permissions** :
 ```bash
@@ -129,13 +127,13 @@ rm -rf .docker/mysql/data
 docker-compose up -d
 ```
 
-⚠️ Note : la structure de la base de données est gérée par le fichier init.sql.
+ Note : la structure de la base de données est gérée par le fichier init.sql.
 
-## 🔒 Sécurité
+##  Sécurité
 
-⚠️ Les identifiants actuels sont pour le développement uniquement. En production, utilisez des identifiants sécurisés.
+ Les identifiants actuels sont pour le développement uniquement. En production, utilisez des identifiants sécurisés.
 
-## 📝 Fonctionnalités
+##  Fonctionnalités
 
 - Gestion des animaux (CRUD)
 - Gestion des habitats
@@ -143,6 +141,6 @@ docker-compose up -d
 - Interface responsive
 - Galerie d'images
 
-## 📄 Licence
+##  Licence
 
 Ce projet est sous licence MIT. 
