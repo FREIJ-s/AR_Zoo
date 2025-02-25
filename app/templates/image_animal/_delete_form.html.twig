@@ -1,5 +1,7 @@
+{% if is_granted('ROLE_USER' )%}
 <form method="post" action="{{ path('app_image_animal_delete', {'id': image_animal.id}) }}" 
     onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette image ?');">
     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ image_animal.id) }}">
     <button class="btn btn-danger">Supprimer</button>
 </form>
+{% endif %}

@@ -5,7 +5,7 @@
 {% block body %}
 <div class="container mt-4">
     <h1 class="text-center text-primary">Suivi des Animaux 🦓🐅🐘</h1>
-
+    {{ dump(info_animals) }}
     <table class="table table-striped table-hover mt-4">
         <thead class="table-dark">
             <tr>
@@ -14,6 +14,7 @@
                 <th>Nourriture</th>
                 <th>Poids</th>
                 <th>Date de passage</th>
+                <th>Véterinaire</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -25,6 +26,7 @@
                 <td>{{ info_animal.food }}</td>
                 <td>{{ info_animal.weight }} kg</td>
                 <td>{{ info_animal.datePassage ? info_animal.datePassage|date('Y-m-d') : 'Non spécifiée' }}</td>
+                <td>{{ info_animal.veterinary.lastname }}</td>
                 <td>
                     <a href="{{ path('app_info_animal_show', {'id': info_animal.id}) }}" class="btn btn-info btn-sm">Voir</a>
                     <a href="{{ path('app_info_animal_edit', {'id': info_animal.id}) }}" class="btn btn-warning btn-sm">Modifier</a>

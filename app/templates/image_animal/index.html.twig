@@ -14,15 +14,18 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ image_animal.label }}</h5>
                         <a href="{{ path('app_image_animal_show', {'id': image_animal.id}) }}" class="btn btn-info btn-sm">Voir</a>
+                        {% if is_granted('ROLE_USER' )%}
                         <a href="{{ path('app_image_animal_edit', {'id': image_animal.id}) }}" class="btn btn-warning btn-sm">Modifier</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         {% else %}
             <p class="text-center">Aucune image trouvée.</p>
         {% endfor %}
+    {% if is_granted('ROLE_USER' )%}
     </div>
-
     <a href="{{ path('app_image_animal_new') }}" class="btn btn-success">Ajouter une nouvelle image</a>
 </div>
+{% endif %}
 {% endblock %}

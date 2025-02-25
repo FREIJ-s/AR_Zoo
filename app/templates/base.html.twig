@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Arcadia Zoo{% endblock %}</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <!-- Bootstrap via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -82,6 +81,29 @@
         .card:hover {
             transform: scale(1.05);
         }
+        .dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .navbar {
+    background-color: #333 !important;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode .btn-dark {
+    background-color: #ffcc00;
+    color: black;
+}
+
+.dark-mode .btn-dark i {
+    color: black;
+}
+
     </style>
 </head>
 <body>
@@ -163,7 +185,32 @@
         {% block body %}{% endblock %}
     </main>
 
-    <!-- Bootstrap JS via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <button id="toggle-dark-mode" class="btn btn-dark position-fixed bottom-0 end-0 m-3">
+    <i class="fas fa-moon"></i>
+</button>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("toggle-dark-mode");
+        const body = document.body;
+
+        if (localStorage.getItem("dark-mode") === "enabled") {
+            body.classList.add("dark-mode");
+            toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        toggleButton.addEventListener("click", function () {
+            body.classList.toggle("dark-mode");
+
+            if (body.classList.contains("dark-mode")) {
+                localStorage.setItem("dark-mode", "enabled");
+                toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem("dark-mode", "disabled");
+                toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    });
+</script>
 </body>
 </html>

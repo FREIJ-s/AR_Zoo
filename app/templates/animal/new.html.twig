@@ -7,7 +7,38 @@
     <h1 class="text-center text-success">Ajouter un Nouvel Animal 🦓</h1>
 
     <div class="card p-4 shadow">
-        {{ include('animal/_form.html.twig', {'button_label': 'Ajouter'}) }}
+        {# {{ include('animal/_form.html.twig', {'button_label': 'Ajouter'}) }} #}
+        {{ form_start(form) }}
+    <div class="mb-3">
+        {{ form_label(form.name, 'Nom de l\'animal', { 'class': 'form-label' }) }}
+        {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+
+    <div class="mb-3">
+        {{ form_label(form.creationDate, 'Date de création', { 'class': 'form-label' }) }}
+        {{ form_widget(form.creationDate, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+        <div class="mb-3">
+        {{ form_label(form.habitat, 'Habitat', { 'class': 'form-label' } ) }}
+        {{ form_widget(form.habitat, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+        </div>
+        <div class="mb-3">
+        {{ form_label(form.breed, 'Breed', { 'class': 'form-label' }  ) }}
+        {{ form_widget(form.breed, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+        </div>
+        <div class="mb-3">
+        {{ form_label(form.infoAnimal, 'Info Animal', { 'class': 'form-label' } ) }}
+        {{ form_widget(form.infoAnimal, { 'attr': {'class': 'form-control'} }) }}
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-success w-100">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }}
+
     </div>
 
     <div class="mt-3">
