@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mentions Légales & RGPD
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5">
+		<h1 class="text-center text-primary mb-4">Mentions Légales & Politique de Confidentialité</h1>
+
+		<section class="mb-5">
+			<h2>1. Informations légales</h2>
+			<p>
+				<strong>Nom du site :</strong>
+				Arcadia Zoo</p>
+			<p>
+				<strong>Propriétaire :</strong>
+				Arcadia Zoo Administration</p>
+			<p>
+				<strong>Adresse :</strong>
+				123 Rue des Animaux, 75000 Paris</p>
+			<p>
+				<strong>Email :</strong>
+				<a href="mailto:contact@arcadiazoo.com">contact@arcadiazoo.com</a>
+			</p>
+			<p>
+				<strong>Hébergeur :</strong>
+				Firebase & Serveur MySQL</p>
+		</section>
+
+		<section class="mb-5">
+			<h2>2. Données personnelles et RGPD</h2>
+			<p>Arcadia Zoo s'engage à protéger vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD).</p>
+		</section>
+
+		<section class="mb-5">
+			<h3>2.1 Données collectées</h3>
+			<ul>
+				<li>Nom, prénom, email, téléphone (réservations, signalements, avis)</li>
+				<li>Adresse IP, type de navigateur (statistiques anonymes)</li>
+				<li>Cookies de session et de navigation</li>
+			</ul>
+		</section>
+
+		<section class="mb-5">
+			<h3>2.2 Finalité du traitement des données</h3>
+			<ul>
+				<li>Gérer les réservations et signalements d’animaux</li>
+				<li>Améliorer l’expérience utilisateur</li>
+				<li>Assurer la sécurité et prévenir la fraude</li>
+				<li>Envoyer des notifications si vous avez donné votre consentement</li>
+			</ul>
+		</section>
+
+		<section class="mb-5">
+			<h3>2.3 Sécurité et stockage</h3>
+			<ul>
+				<li>
+					<strong>Base MySQL :</strong>
+					Données structurées (utilisateurs, animaux, habitats)</li>
+				<li>
+					<strong>Firebase Firestore :</strong>
+					Données dynamiques (avis, réservations, signalements)</li>
+				<li>Mesures de sécurité : chiffrement des données, accès restreint</li>
+			</ul>
+		</section>
+
+		<section class="mb-5">
+			<h3>2.4 Vos droits</h3>
+			<p>Conformément au RGPD, vous avez le droit :</p>
+			<ul>
+				<li>D’accéder à vos données</li>
+				<li>De les modifier ou les supprimer</li>
+				<li>D’opposer au traitement de vos données</li>
+			</ul>
+			<p>📧 Pour toute demande, contactez-nous à
+				<a href="mailto:contact@arcadiazoo.com">contact@arcadiazoo.com</a>
+			</p>
+		</section>
+
+		<section class="mb-5">
+			<h2>3. Gestion des cookies</h2>
+			<p>Vous pouvez gérer vos préférences de cookies dans les paramètres de votre navigateur.</p>
+		</section>
+
+		<section class="mb-5">
+			<h2>4. Modification des conditions</h2>
+			<p>Arcadia Zoo se réserve le droit de modifier ces mentions légales à tout moment.</p>
+		</section>
+
+		<p class="text-center">© 2024 Arcadia Zoo - Tous droits réservés.</p>
+	</div>
+{% endblock %}

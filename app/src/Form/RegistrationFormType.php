@@ -41,7 +41,7 @@ class RegistrationFormType extends AbstractType
                     'Veterinary' => 'ROLE_VETERINARY',
                     'Keeper' => 'ROLE_KEEPER',
                 ],
-                'expanded' => true,  // Affiche sous forme de boutons radio
+                'expanded' => true,  // Permet de choisir plusieurs rôles
                 'multiple' => true,  // Permet de choisir plusieurs rôles
                 'attr' => ['class' => 'form-check'],
             ])

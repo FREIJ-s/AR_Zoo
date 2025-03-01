@@ -1,114 +1,126 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil - Arcadia Zoo{% endblock %}
+{% block title %}Accueil - Arcadia Zoo
+{% endblock %}
 
 {% block body %}
-<div class="video-container">
-    <video loop autoplay muted>
-        <source src="assets/videos/demoZ.mp4" type="video/mp4">
-    </video>
-    <div class="overlay">
-        <h1 class="display-4 fw-bold">Bienvenue à Arcadia Zoo 🦁</h1>
-        <p class="lead">Découvrez nos animaux et leurs habitats fascinants.</p>
-        <a href="{{ path('app_image_habitat_index')}}" class="btn btn-warning btn-lg">Explorer</a>
-    </div>
-</div>
+	<div class="video-container">
+		<video loop autoplay muted>
+			<source src="assets/videos/demoZ.mp4" type="video/mp4">
+		</video>
+		<div class="overlay">
+			<h1 class="display-4 fw-bold">Bienvenue à Arcadia Zoo 🦁</h1>
+			<p class="lead">Découvrez nos animaux et leurs habitats fascinants.</p>
+			<a href="{{ path('app_image_habitat_index')}}" class="btn btn-warning btn-lg">Explorer</a>
+		</div>
+	</div>
 
-<!-- Présentation du Zoo -->
-<section id="A-propos" class="container mt-5 section-hidden">
-    <h2 class="text-center mb-4">À propos d'Arcadia Zoo</h2>
-    <p class="text-center">Arcadia Zoo est un lieu magique où petits et grands peuvent découvrir des animaux fascinants, 
-    apprendre à mieux comprendre la faune et participer à des expériences inoubliables. 
-    Avec nos habitats naturels recréés, nos spectacles éducatifs et nos nombreuses activités interactives, 
-    nous offrons un cadre idéal pour explorer le règne animal.</p>
-</section>
+	<!-- Présentation du Zoo -->
+	<section id="A-propos" class="container mt-5 section-hidden">
+		<h2 class="text-center mb-4">À propos d'Arcadia Zoo</h2>
+		<p class="text-center">Arcadia Zoo est un lieu magique où petits et grands peuvent découvrir des animaux fascinants, 
+			    apprendre à mieux comprendre la faune et participer à des expériences inoubliables. 
+			    Avec nos habitats naturels recréés, nos spectacles éducatifs et nos nombreuses activités interactives, 
+			    nous offrons un cadre idéal pour explorer le règne animal.</p>
+	</section>
 
-<!-- Nos Animaux Vedette -->
-<section class="container mt-5 section-hidden">
-    <h2 class="text-center mb-4">Nos animaux en vedette</h2>
-    <div class="row g-4">
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card shadow">
-                        <img src="assets/images/barbarie.jpg" class="card-img-top" alt="Lion">
-                        <div class="card-body">
-                            <h5 class="card-title">Simba</h5>
-                            <p class="card-text"> Il rugit si fort que même les nuages tremblent !  
-                    Mais chut… il adore aussi les câlins.  
-                    Son plat préféré ? Un bon gros steak (mais pas en plastique) !.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mt-4">
-                    <div class="card shadow">
-                        <img src="assets/images/elephant.jpg" class="card-img-top" alt="Éléphant">
-                        <div class="card-body">
-                            <h5 class="card-title">Dumbo</h5>
-                            <p class="card-text"> Avec ses grandes oreilles, il entend même les secrets des fourmis !  
-                    Il adore prendre des bains de boue pour rester tout propre (bizarre, hein ?)  
-                    Son jeu préféré ? Faire la course… au ralenti !</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+	<!-- Nos Animaux Vedette -->
+	<section class="container mt-5 section-hidden">
+		<h2 class="text-center mb-4">Nos animaux en vedette</h2>
+		<div class="row g-4">
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-12">
+						<div class="card shadow">
+							<img src="assets/images/barbarie.jpg" class="card-img-top" alt="Lion">
+							<div class="card-body">
+								<h5 class="card-title">Simba</h5>
+								<p class="card-text">
+									Il rugit si fort que même les nuages tremblent !  
+									                    Mais chut… il adore aussi les câlins.  
+									                    Son plat préféré ? Un bon gros steak (mais pas en plastique) !.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 mt-4">
+						<div class="card shadow">
+							<img src="assets/images/elephant.jpg" class="card-img-top" alt="Éléphant">
+							<div class="card-body">
+								<h5 class="card-title">Dumbo</h5>
+								<p class="card-text">
+									Avec ses grandes oreilles, il entend même les secrets des fourmis !  
+									                    Il adore prendre des bains de boue pour rester tout propre (bizarre, hein ?)  
+									                    Son jeu préféré ? Faire la course… au ralenti !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        <div class="col-md-6">
-            <div class="card shadow h-100">
-                <img src="assets/images/guepard.jpg" class="card-img-top" alt="Guépard">
-                <div class="card-body">
-                    <h5 class="card-title">Flash</h5>
-                    <p class="card-text"> Il court plus vite qu’un super-héros en patins à roulettes !  
-                    Mais attention… il adore faire la sieste après.  
-                    Sa technique secrète ? Des pauses turbo-chocolat (ou presque) !</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+			<div class="col-md-6">
+				<div class="card shadow h-100">
+					<img src="assets/images/guepard.jpg" class="card-img-top" alt="Guépard">
+					<div class="card-body">
+						<h5 class="card-title">Flash</h5>
+						<p class="card-text">
+							Il court plus vite qu’un super-héros en patins à roulettes !  
+							                    Mais attention… il adore faire la sieste après.  
+							                    Sa technique secrète ? Des pauses turbo-chocolat (ou presque) !</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-<!-- Événements au Zoo -->
-<section id="Evenements" class="container mt-5 section-hidden">
-    <h2 class="text-center mb-4">Événements à ne pas manquer</h2>
-    <div class="row g-4">
-        <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Nuit au Zoo 🌙</h5>
-                    <p class="card-text">Venez découvrir le zoo sous un autre angle avec nos visites nocturnes et rencontrez les animaux qui s’éveillent après le coucher du soleil !</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Spectacle des Rapaces 🦅</h5>
-                    <p class="card-text">Assistez à un impressionnant spectacle de rapaces en vol libre et apprenez-en plus sur ces majestueux chasseurs du ciel.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card shadow mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Journée des Enfants 🧒</h5>
-                    <p class="card-text">Un événement spécial pour les plus jeunes, avec des ateliers interactifs, des jeux éducatifs et des rencontres avec nos soigneurs.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+	<!-- Événements au Zoo -->
+	<section id="Evenements" class="container mt-5 section-hidden">
+		<h2 class="text-center mb-4">Événements à ne pas manquer</h2>
+		<div class="row g-4">
+			<div class="col-md-6">
+				<div class="card shadow">
+					<div class="card-body">
+						<h5 class="card-title">Nuit au Zoo 🌙</h5>
+						<p class="card-text">Venez découvrir le zoo sous un autre angle avec nos visites nocturnes et rencontrez les animaux qui s’éveillent après le coucher du soleil !</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card shadow">
+					<div class="card-body">
+						<h5 class="card-title">Spectacle des Rapaces 🦅</h5>
+						<p class="card-text">Assistez à un impressionnant spectacle de rapaces en vol libre et apprenez-en plus sur ces majestueux chasseurs du ciel.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card shadow mt-4">
+					<div class="card-body">
+						<h5 class="card-title">Journée des Enfants 🧒</h5>
+						<p class="card-text">Un événement spécial pour les plus jeunes, avec des ateliers interactifs, des jeux éducatifs et des rencontres avec nos soigneurs.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-<!--Footer -->
-<footer class="bg-dark text-light text-center py-4 mt-5">
-    <div class="container">
-        <p>© 2024 Arcadia Zoo | <a href="#" class="text-light">Mentions Légales</a></p>
-        <div class="d-flex justify-content-center">
-            <a href="#" class="me-3 text-light"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="me-3 text-light"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="me-3 text-light"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-    </div>
-</footer>
+	<!--Footer -->
+	<footer class="bg-dark text-light text-center py-4 mt-5">
+		<div class="container">
+			<p>© 2024 Arcadia Zoo |
+				<a href="{{ path('app_mentions_legales')}}" class="text-light">Mentions Légales</a>
+			</p>
+			<div class="d-flex justify-content-center">
+				<a href="#" class="me-3 text-light">
+					<i class="fa-brands fa-facebook-f"></i>
+				</a>
+				<a href="#" class="me-3 text-light">
+					<i class="fa-brands fa-instagram"></i>
+				</a>
+				<a href="#" class="me-3 text-light">
+					<i class="fa-brands fa-twitter"></i>
+				</a>
+			</div>
+		</div>
+	</footer>
 
 {% endblock %}

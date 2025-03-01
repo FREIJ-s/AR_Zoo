@@ -1,13 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Réserver une visite{% endblock %}
+{% block title %}Réserver une visite
+{% endblock %}
 
 {% block body %}
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Réservez votre visite</h2>
-    {{ form_start(form) }}
-        {{ form_widget(form, { 'attr': {'class': 'p-4 shadow-lg rounded bg-white'} }) }}
-        <button type="submit" class="btn btn-primary w-100">Réserver</button>
-    {{ form_end(form) }}
-</div>
+	<div class="container mt-5">
+		<h2 class="text-center mb-4">Réservez votre visite</h2>
+
+		{{ form_start(form, { 'attr': {'novalidate': 'novalidate'} }) }}
+
+		<div class="p-4 shadow-lg rounded bg-white">
+			{% for field in form %}
+				{% if field.vars.name != '_token' %}
+					<div class="mb-3">
+						{{ form_label(field) }}
+						{{ form_widget(field, { 'attr': {'class': 'form-control' } }) }}
+
+						{% if field.vars.errors|length > 0 %}
+							<div class="text-danger">
+								{% for error in field.vars.errors %}
+									<p>{{ error.message }}</p>
+								{% endfor %}
+							</div>
+						{% endif %}
+					</div>
+				{% endif %}
+			{% endfor %}
+
+			<button type="submit" class="btn btn-primary w-100">Réserver</button>
+		</div>
+
+		{{ form_end(form) }}
+	</div>
 {% endblock %}

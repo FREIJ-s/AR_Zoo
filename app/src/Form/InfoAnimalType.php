@@ -24,11 +24,11 @@ class InfoAnimalType extends AbstractType
             ])
             ->add('veterinary', EntityType::class, [
                 'class' => User::class,
-                'choice_label' => 'id',
+                'choice_label' => 'lastname',
             ])
             ->add('animal', EntityType::class, [
                 'class' => Animal::class,
-                'choice_label' => 'id',
+                'choice_label' => 'name',
             ])
         ;
     }
