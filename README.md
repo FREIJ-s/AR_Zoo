@@ -1,17 +1,18 @@
 # 🦁 Arcadia Zoo
 
-Application web de gestion de zoo développée avec Symfony 6 et Docker. Cette application permet de gérer les animaux, leurs habitats et les informations vétérinaires.
+Application web de gestion de zoo développée avec Symfony 7.2 et Docker. Cette application permet de gérer les animaux, leurs habitats et les informations vétérinaires.
 
-##  Prérequis
+## Prérequis
 
 - Docker Desktop
 - Git
 
-##  Fichiers à partager
+## Fichiers à partager
 
 Pour partager le projet, incluez les éléments suivants :
+
 ```
-AR_Zoo-master/
+AR_Zoo/
 ├── .docker/                # Configuration Docker
 │   ├── mysql/
 │   │   └── init.sql      # Script d'initialisation de la base de données
@@ -20,7 +21,7 @@ AR_Zoo-master/
 ├── app/
 │   ├── config/           # Configuration Symfony
 │   ├── migrations/       # Migrations de base de données
-│   ├── public/          
+│   ├── public/
 │   │   └── assets/      # Images et vidéos
 │   ├── src/             # Code source
 │   ├── templates/       # Templates Twig
@@ -35,34 +36,35 @@ Fichiers à exclure :
 - .docker/mysql/data/  # Données de la base
 ```
 
-##  Installation
+## Installation
 
 1. Clonez le repository :
+
 ```bash
 git clone <votre-repo>
-cd AR_Zoo-master
+cd AR_Zoo
 ```
 
 2. Construisez les images Docker :
+
 ```bash
 docker-compose build
 ```
 
-
-
 3. Lancez l'application :
+
 ```bash
 docker-compose up -d
 ```
 
 4. Configurez les permissions :
+
 ```bash
 docker-compose exec php chmod -R 777 var/
 docker-compose exec php chmod -R 777 public/assets
 ```
 
-
- Note importante : La base de données est automatiquement initialisée avec les tables et les données de test via le fichier `.docker/mysql/init.sql`. Il n'est pas nécessaire d'exécuter les migrations Doctrine.
+Note importante : La base de données est automatiquement initialisée avec les tables et les données de test via le fichier `.docker/mysql/init.sql`. Il n'est pas nécessaire d'exécuter les migrations Doctrine.
 
 ## Accès
 
@@ -71,7 +73,7 @@ docker-compose exec php chmod -R 777 public/assets
   - Utilisateur : root
   - Mot de passe : root
 
-##  Commandes utiles
+## Commandes utiles
 
 ```bash
 # Arrêter l'application
@@ -87,10 +89,10 @@ docker-compose exec php bash
 docker-compose exec php php bin/console cache:clear
 ```
 
-##  Structure du projet
+## Structure du projet
 
 ```
-AR_Zoo-master/
+AR_Zoo/
 ├── .docker/                # Configuration Docker
 │   ├── mysql/             # MySQL (données et init)
 │   └── php/              # Configuration PHP
@@ -102,20 +104,23 @@ AR_Zoo-master/
 └── docker-compose.yml    # Configuration Docker
 ```
 
-##  Résolution des problèmes
+## Résolution des problèmes
 
 1. **Erreur de permissions** :
+
 ```bash
 docker-compose exec php chmod -R 777 var/
 ```
 
 2. **Images non visibles** :
+
 ```bash
 docker-compose exec php chmod -R 777 public/assets
 ```
 
 3. **Réinitialiser la base de données** :
-Pour réinitialiser complètement la base de données avec les données initiales :
+   Pour réinitialiser complètement la base de données avec les données initiales :
+
 ```bash
 # Arrêter les conteneurs
 docker-compose down -v
@@ -127,13 +132,13 @@ rm -rf .docker/mysql/data
 docker-compose up -d
 ```
 
- Note : la structure de la base de données est gérée par le fichier init.sql.
+Note : la structure de la base de données est gérée par le fichier init.sql.
 
-##  Sécurité
+## Sécurité
 
- Les identifiants actuels sont pour le développement uniquement. En production, utilisez des identifiants sécurisés.
+Les identifiants actuels sont pour le développement uniquement. En production, utilisez des identifiants sécurisés.
 
-##  Fonctionnalités
+## Fonctionnalités
 
 - Gestion des animaux (CRUD)
 - Gestion des habitats
@@ -141,6 +146,6 @@ docker-compose up -d
 - Interface responsive
 - Galerie d'images
 
-##  Licence
+## Licence
 
-Ce projet est sous licence MIT. 
+Ce projet est sous licence MIT.
