@@ -1,28 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter un Avis{% endblock %}
+{% block title %}Ajouter un Avis
+{% endblock %}
 
 {% block body %}
-<section class="container mt-5 section-hidden">
-    <h2 class="text-center mb-4">Avis des visiteurs</h2>
+	<section class="container mt-5 section-hidden">
+		<h2 class="text-center mb-4">Avis des visiteurs</h2>
 
-    {{ form_start(form, { 'attr': {'class': 'p-4 shadow-lg bg-white rounded'} }) }}
+		{{ form_start(form, { 'attr': {'class': 'p-4 shadow-lg bg-white rounded'} }) }}
 
-        <!-- Champ Pseudo -->
-        <div class="mb-3">
-            {{ form_label(form.pseudo, 'Votre nom ou pseudo', { 'label_attr': {'class': 'form-label'} }) }}
-            {{ form_widget(form.pseudo, { 'attr': {'class': 'form-control', 'placeholder': 'Ex: Jean Dupont', 'required': 'required'} }) }}
-        </div>
+		<div class="mb-3">
+			{{ form_label(form.pseudo, 'Votre nom ou pseudo', { 'label_attr': {'class': 'form-label'} }) }}
+			{{ form_widget(form.pseudo, { 'attr': {'class': 'form-control', 'placeholder': 'Ex: Jean Dupont', 'required': 'required'} }) }}
+		</div>
 
-        <!-- Champ Commentaire -->
-        <div class="mb-3">
-            {{ form_label(form.commentaire, 'Votre avis', { 'label_attr': {'class': 'form-label'} }) }}
-            {{ form_widget(form.commentaire, { 'attr': {'class': 'form-control', 'rows': 3, 'required': 'required'} }) }}
-        </div>
+		<div class="mb-3">
+			{{ form_label(form.commentaire, 'Votre avis', { 'label_attr': {'class': 'form-label'} }) }}
+			{{ form_widget(form.commentaire, { 'attr': {'class': 'form-control', 'rows': 3, 'required': 'required'} }) }}
+		</div>
 
-        <!-- Bouton Poster -->
-        <button type="submit" class="btn btn-success w-100">Poster</button>
+		<button type="submit" class="btn btn-success w-100">Poster</button>
 
-    {{ form_end(form) }}
-</section>
+		{{ form_end(form) }}
+	</section>
 {% endblock %}

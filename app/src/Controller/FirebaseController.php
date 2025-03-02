@@ -61,12 +61,23 @@ class FirebaseController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
+            $data['date'] = date('Y-m-d H:i:s'); // Ajout de la date actuelle
             $this->firebaseService->addData('avis', $data);
             return $this->redirectToRoute('app_home');
         }
 
         return $this->render('firebase/ajouter_avis.html.twig', [
             'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/avis', name: 'app_avis_list')]
+    public function afficherAvis(): Response
+    {
+        $avisList = $this->firebaseService->getData('avis');
+
+        return $this->render('firebase/avis.html.twig', [
+            'avisList' => $avisList,
         ]);
     }
 }
