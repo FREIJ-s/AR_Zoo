@@ -1,4 +1,4 @@
-# 🦁 Arcadia Zoo
+# Arcadia Zoo
 
 Application web de gestion de zoo développée avec Symfony 7.2 et Docker. Cette application permet de gérer les animaux, leurs habitats et les informations vétérinaires.
 
