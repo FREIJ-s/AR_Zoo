@@ -112,7 +112,8 @@
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<a class="navbar-brand fw-bold" href="{{ path('app_home') }}">
-					<img src="assets/images/logoZ.png" alt="logo zoo arcadia" width="50"/></a>
+					<img src="{{ asset('assets/images/logoZ.png') }}" alt="logo zoo arcadia" width="50"/>
+				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -201,6 +202,7 @@
 					</div>
 				</div>
 			</div>
+
 		</nav>
 
 		<main>
@@ -234,5 +236,29 @@ toggleButton.innerHTML = '<i class="fas fa-moon"></i>';
 });
 });
 		</script>
+		<!--Footer -->
+		<footer class="bg-dark text-light text-center py-4 mt-5">
+			<div class="container">
+				<p>© 2024 Arcadia Zoo |
+					<a href="{{ path('app_mentions_legales')}}" class="text-light">Mentions Légales</a>
+				</p>
+				<p>
+					<a href="{{ path('app_avis_list') }}" class="text-light">Voir les avis des visiteurs</a>
+				</p>
+
+				<div class="d-flex justify-content-center">
+					<a href="#" class="me-3 text-light">
+						<i class="fa-brands fa-facebook-f"></i>
+					</a>
+					<a href="#" class="me-3 text-light">
+						<i class="fa-brands fa-instagram"></i>
+					</a>
+					<a href="#" class="me-3 text-light">
+						<i class="fa-brands fa-twitter"></i>
+					</a>
+				</div>
+			</div>
+		</footer>
+
 	</body>
 </html>

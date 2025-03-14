@@ -15,9 +15,6 @@ class FirebaseService
         $this->firebaseUrl = 'https://zoo-arcadia-2c6e3-default-rtdb.europe-west1.firebasedatabase.app/';
     }
 
-    /**
-     * 📌 Ajoute des données dans une collection Firebase
-     */
     public function addData(string $collection, array $data): string
     {
         $url = "{$this->firebaseUrl}{$collection}.json";
@@ -31,9 +28,6 @@ class FirebaseService
         return $response->getStatusCode() === 200 ? "Succès" : "Erreur";
     }
 
-    /**
-     * 📌 Récupère toutes les données d'une collection Firebase
-     */
     public function getData(string $collection): array
     {
         $url = "{$this->firebaseUrl}{$collection}.json";
